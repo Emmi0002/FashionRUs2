@@ -1,0 +1,36 @@
+---
+const { data } = Astro.props;
+---
+
+<section>
+  <img src=`https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp` alt="product" />
+  {data.soldout > 0 ? <div class="SoldOut">Sold Out</div> : ""}
+  <h3>{data.productdisplayname}</h3>
+  <div class="grid_1-1">
+    <p>{data.articletype} | {data.brandname}</p>
+    <section><p>Read More</p></section>
+  </div>
+  {
+    data.discount > 0 ? (
+      <>
+        <span class="old_price"> {data.price} DKK</span>
+        <br />
+      </>
+    ) : (
+      ""
+    )
+  }
+  <span class="new_price"> {Math.round(data.price * (1 - data.discount / 100))} DKK</span><br />
+  {
+    data.discount > 0 ? (
+      <>
+        <p class="discountlabel_2"> {data.discount} %</p>
+        <br />
+      </>
+    ) : (
+      ""
+    )
+  }
+</section>
+
+<style></style>
