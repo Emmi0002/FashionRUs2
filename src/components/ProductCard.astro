@@ -20,7 +20,7 @@ const { data } = Astro.props;
       ""
     )
   }
-  <span class="new_price"> {Math.round(data.price * (1 - data.discount / 100))} DKK</span><br />
+  <span class="new_price"> {Math.round(data.price - (data.price * data.discount) / 100)} DKK</span><br />
   {
     data.discount > 0 ? (
       <>
