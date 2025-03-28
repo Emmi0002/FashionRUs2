@@ -8,7 +8,7 @@ const { data } = Astro.props;
   <h3>{data.productdisplayname}</h3>
   <div class="grid_1-1">
     <p>{data.articletype} | {data.brandname}</p>
-    <section><p>Read More</p></section>
+    <a href={`../product/${data.id}`}>Read More</a>
   </div>
   {
     data.discount > 0 ? (

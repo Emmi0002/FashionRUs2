@@ -1,5 +1,7 @@
 ---
 import "../css/style.css";
+import Header from "../components/header.astro";
+const { classes } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,7 +13,7 @@ import "../css/style.css";
     <meta name="generator" content={Astro.generator} />
     <title>FashionRUs</title>
   </head>
-  <body>
+  <body class={classes}>
     <slot />
   </body>
 </html>
